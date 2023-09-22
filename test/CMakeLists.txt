@@ -26,6 +26,7 @@ add_test_case_with_run(bool sha256)
 add_test_case_with_run(bool polynomial)
 add_test_case_with_run(bool inner_prdt)
 add_test_case_with_run(bool lowmc)
+add_test_case_with_run(bool merkle_test)
 
 add_test_case_with_run(arith abconversion)
 add_test_case_with_run(arith zk_proof)

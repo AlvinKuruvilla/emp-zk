@@ -7,5 +7,7 @@
 #include "emp-zk/extensions/floats.h"
 #include "emp-zk/extensions/lowmc.h"
 #include "emp-zk/extensions/ram-zk/emp-ram-zk.h"
+#include "emp-zk/emp-utills/bit_utils.h"
+#include "emp-zk/emp-utills/merkle_tree.h"
 
 #endif
