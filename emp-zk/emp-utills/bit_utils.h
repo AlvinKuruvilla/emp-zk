@@ -3,7 +3,7 @@
 #include <time.h>
 #include <emp-tool/emp-tool.h>
 #include <emp-zk/emp-zk.h>
-#include "/opt/homebrew/opt/boost/boost/multiprecision/cpp_int.hpp"
+#include <boost/multiprecision/cpp_int.hpp>
 
 using namespace std;
 using namespace boost::multiprecision;
@@ -201,7 +201,7 @@ namespace emp
                                 } // worng numbers, SO CLOSE
                         }
 
-                        cout << "\nnumber " << i << " = " << number << endl;
+                        // cout << "\nnumber " << i << " = " << number << endl;
 
                         nums.push_back(number);
                 }
@@ -209,7 +209,7 @@ namespace emp
                 std::sort(nums.begin(), nums.end());
                 for (int leaves_indx = 0; leaves_indx < total_nums; leaves_indx++)
                 {
-                        cout << "nums = " << nums[leaves_indx] << endl;
+                        // cout << "nums = " << nums[leaves_indx] << endl;
                         std::bitset<256> bit_from_vec(nums[leaves_indx]);
                         for (size_t bt = 0; bt < bit_from_vec.size(); bt++)
                         {
@@ -226,7 +226,7 @@ namespace emp
         std::vector<bool> toBooleanArray(unsigned long long num)
         {
                 std::bitset<256> b(num);
-                std::cout << num << std::endl;
+                // std::cout << num << std::endl;
                 std::vector<bool> arr(256);
                 for (int i = 0; i < 256; i++)
                 {
@@ -252,7 +252,7 @@ namespace emp
 
                 std::string new_entry_str = new_entry.str();
                 unsigned long long sixtyfourBitEntry = std::stoul(new_entry_str);
-                cout << "sixtyfourBitEntry = " << sixtyfourBitEntry << endl;
+                // cout << "sixtyfourBitEntry = " << sixtyfourBitEntry << endl;
 
                 std::bitset<256> b(sixtyfourBitEntry);
                 for (int i = 0; i < 256; i++)

@@ -6,6 +6,7 @@ find_path(CMAKE_FOLDER NAMES cmake/emp-tool-config.cmake)
 include(${CMAKE_FOLDER}/cmake/emp-base.cmake)
 
 find_package(emp-ot REQUIRED)
+find_package(Boost REQUIRED)
 include_directories(${EMP-OT_INCLUDE_DIRS})
 set(sources
   emp-zk/emp-zk-bool/emp-zk-bool.cpp
@@ -19,3 +20,4 @@ install(TARGETS ${NAME} DESTINATION lib)
 
 ENABLE_TESTING()
 ADD_SUBDIRECTORY(test)
+add_definitions("-Wno-dev")

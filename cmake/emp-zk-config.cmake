@@ -1,4 +1,5 @@
 find_package(emp-ot)
+find_package(Boost)
 
 find_path(EMP-ZK_INCLUDE_DIR NAMES emp-zk/emp-zk.h)
 find_library(EMP-ZK_LIBRARY NAMES emp-zk)

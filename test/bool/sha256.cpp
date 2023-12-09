@@ -4,24 +4,24 @@ using namespace std;
 const string circuit_file_location =
     macro_xstr(EMP_CIRCUIT_PATH) + string("bristol_format/");
 const int threads = 1;
-void get_plain(bool *res, bool *wit, const char *file) {
-  setup_plain_prot(false, "");
-  BristolFormat cf(file);
-  vector<Bit> W, P, O;
-  W.resize(cf.n1);
-  for (int i = 0; i < cf.n1; ++i)
-    W[i] = Bit(wit[i], PUBLIC);
-  O.resize(cf.n1);
-  for (int i = 0; i < cf.n1; ++i)
-    O[i] = Bit(false, PUBLIC);
-  cf.compute(O.data(), W.data(), P.data());
-  for (int i = 0; i < 64; ++i)
-    cf.compute(O.data(), O.data(), P.data());
-  for (int i = 0; i < cf.n3; ++i) {
-    res[i] = O[i].reveal<bool>(PUBLIC);
-  }
-  finalize_plain_prot();
-}
+// void get_plain(bool *res, bool *wit, const char *file) {
+//   setup_plain_prot(false, "");
+//   BristolFormat cf(file);
+//   vector<Bit> W, P, O;
+//   W.resize(cf.n1);
+//   for (int i = 0; i < cf.n1; ++i)
+//     W[i] = Bit(wit[i], PUBLIC);
+//   O.resize(cf.n1);
+//   for (int i = 0; i < cf.n1; ++i)
+//     O[i] = Bit(false, PUBLIC);
+//   cf.compute(O.data(), W.data(), P.data());
+//   for (int i = 0; i < 64; ++i)
+//     cf.compute(O.data(), O.data(), P.data());
+//   for (int i = 0; i < cf.n3; ++i) {
+//     res[i] = O[i].reveal<bool>(PUBLIC);
+//   }
+//   finalize_plain_prot();
+// }
 int main(int argc, char **argv) {
   int party, port;
   parse_party_and_port(argv, &party, &port);
