@@ -149,6 +149,7 @@ void MerkleTree::prove_not_in_tree(bool *non_leaf)
     int *right_path = new int[levels];
     int proof_flag = 1; // assume leaf is in tree
     int match_flag = 0;
+
     for (int i = 0; i < num_leaves; i++)
     {
         int res = compare(non_leaf, tree[0][i], 256);
@@ -157,6 +158,7 @@ void MerkleTree::prove_not_in_tree(bool *non_leaf)
             match_flag = 1;
         }
     }
+
     if (match_flag > 0)
     {
         cout << "leaf found in tree" << endl;
@@ -190,7 +192,7 @@ void MerkleTree::prove_not_in_tree(bool *non_leaf)
     }
 }
 
-void dynamic_leaf_array_init(int num_of_leaves, bool **leaf_array)
+void dynamic_leaf_array_init(int num_of_leaves, bool **leaf_array, bool **addr_leaf_array)
 {
     std::vector<vector<bool>> bits_array(num_of_leaves);
     for (int i = 0; i < num_of_leaves; i++)
@@ -201,10 +203,12 @@ void dynamic_leaf_array_init(int num_of_leaves, bool **leaf_array)
     for (size_t lf = 0; lf < num_of_leaves; lf++)
     {
         bool *num = new bool[256];
+
         for (int bt = 0; bt < 256; bt++)
         {
             num[bt] = bits_array[lf][bt];
         }
+
         leaf_array[lf] = num;
     }
 }
